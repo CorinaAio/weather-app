@@ -23,24 +23,25 @@ class WeatherApp extends Component {
 		let {selectedCity} = this.state;
 
 		if(!selectedCity.id) {
-			let [id, name] = this.getFirstCity(cities);
-			selectedCity = {id, name, data: {}};
+			selectedCity = {
+				id: this.getFirstCityId(cities),
+				data: {}
+			};
 		}
 		
 		this.updateSelectedCityWeatherData(selectedCity.id);
 	}
 	
-	getFirstCity = (cities) => {
-		return cities.entries().next().value;
+	getFirstCityId = (cities) => {
+		return cities.keys().next().value;
 	}
 
 	updateSelectedCityWeatherData = (cityId) => {
 		WeatherService
 			.retrieveWeatherDataByCityId(cityId)
 			.then(rjson => {
-				let {id, name} = rjson;
 				this.setState({
-					selectedCity: {id, name, data: rjson}
+					selectedCity: {id: cityId, data: rjson}
 				});
 			})
 			.catch(err => console.error(err));
@@ -50,11 +51,17 @@ class WeatherApp extends Component {
 		this.updateSelectedCityWeatherData(cityId);
 	}
 
+	isSelected = (id) => {
+		return this.state.selectedCity.id === id;
+	}
+
 	render() {
+		let {cities, selectedCity} = this.state;
+
 		return (
 			<div className="weather-app">
-				<Menu items={this.state.cities} onClickHandler={this.onClickCityHandler}/>
-				{this.state.selectedCity.id && <WeatherCard city={this.state.selectedCity}/>}
+				<Menu items={cities} onClickHandler={this.onClickCityHandler} isSelected={this.isSelected}/>
+				{selectedCity.id && <WeatherCard city={selectedCity}/>}
 			</div>
 		);
 	}

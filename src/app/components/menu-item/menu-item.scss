@@ -1,4 +1,12 @@
+@import '../../assets/color-pallette';
+
 .menu .menu-item {
-	padding: 5px 10px;
+	padding: 10px 15px;
 	cursor: pointer;
+	color: $dark-green;
+
+	&:hover, &.selected {
+		background-color: $dark-green;
+		color: $light-grey;
+	}
 }

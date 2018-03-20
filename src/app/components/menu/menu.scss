@@ -1,6 +1,9 @@
+@import '../../assets/color-pallette';
+
 .menu {
 	display: flex;
     max-width: 150px;
     flex-direction: column;
+    background-color: $light-grey;
 }
     

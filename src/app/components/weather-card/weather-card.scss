@@ -1,0 +1,27 @@
+@import '../../assets/color-pallette';
+
+.weather-card {
+	background-color: $light-grey;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 15px;
+	align-content: flex-start;
+	justify-content: center;
+    border-left: 1px solid $dark-green;
+    flex-basis: 250px;
+
+    .span {
+    	padding: 5px 0;
+    }
+
+	.temperature {
+		font-size: 45px;
+		font-weight: bold;
+		color: $blue;
+	}
+	
+	.wind-speed {
+		font-size: 18px;
+		color: $dark-grey;
+	}
+}

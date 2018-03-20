@@ -1,3 +1,10 @@
+@import '../../assets/color-pallette';
+
+
+body {
+	font-family: Arial;
+}
+
 .weather-app {
 	display: flex;
 	flex-direction: row;
