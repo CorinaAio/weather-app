@@ -6,6 +6,17 @@ import ErrorBoundary from '../error-boundary/error-boundary';
 import cities from '../../data/cities';
 import {APP_ERR_MSG} from '../../data/constants';
 
+
+/*
+	This component takes care of the state of the application
+	It retrieves the necessary data based on user actions 
+	Updates the state in order to trigger a re-render of
+	 the necessary components in order to display the user the data that it needs
+	
+	I didn't choose to use a state management library like Redux because the app is
+	 quite small and it seemed more like over engineering. Although, if the app should grow,
+	 them it would be necessary to add on for a cleaner code
+*/
 class WeatherApp extends Component {
 
 	constructor(props) {
