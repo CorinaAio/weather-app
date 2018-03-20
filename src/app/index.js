@@ -4,4 +4,4 @@ import WeatherApp from './components/weather-app/weather-app';
 import cities from './data/cities';
 import './index.scss';
 
-ReactDOM.render(<App cities={cities} />, document.getElementById('app'));
+ReactDOM.render(<WeatherApp cities={cities} />, document.getElementById('app'));
