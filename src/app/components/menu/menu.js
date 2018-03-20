@@ -1,6 +1,5 @@
 import React from 'react';
 import MenuItem from '../menu-item/menu-item';
-import './menu.scss';
 
 export default function(props) {
 	let {items = new Map(), onClickHandler = () => {}, selectedItem, isSelected = () => false} = props;

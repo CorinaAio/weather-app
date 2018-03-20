@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Menu from '../menu/menu';
 import WeatherCard from '../weather-card/weather-card';
 import WeatherService from '../../services/weather-service';
+import ErrorBoundary from '../error-boundary/error-boundary';
 import cities from '../../data/cities';
-import './weather-app.scss'
+import {APP_ERR_MSG} from '../../data/constants';
+/*import './weather-app.scss'*/
 
 class WeatherApp extends Component {
 
@@ -59,10 +61,12 @@ class WeatherApp extends Component {
 		let {cities, selectedCity} = this.state;
 
 		return (
-			<div className="weather-app">
-				<Menu items={cities} onClickHandler={this.onClickCityHandler} isSelected={this.isSelected}/>
-				{selectedCity.id && <WeatherCard city={selectedCity}/>}
-			</div>
+			<ErrorBoundary errorMessage={APP_ERR_MSG}>
+				<div className="weather-app">
+					<Menu items={cities} onClickHandler={this.onClickCityHandler} isSelected={this.isSelected}/>
+					{selectedCity.id && <WeatherCard city={selectedCity}/>}
+				</div>
+			</ErrorBoundary>
 		);
 	}
 }

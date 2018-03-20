@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './weather-card.scss';
 
 class WeatherCard extends Component {
 	render() {

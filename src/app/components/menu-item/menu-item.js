@@ -1,9 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import './menu-item.scss';
-
-
 export default function({value, onClickHandler, isSelected}) {
 
 	function getClasses() {
