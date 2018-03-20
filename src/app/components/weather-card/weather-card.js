@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+/*
+	this component renders the temperature and the wind speed of the current selected menu item
+*/
 class WeatherCard extends Component {
 	render() {
 		let {name, wind: {speed, deg}, main:{temp}} = this.props.city.data;
