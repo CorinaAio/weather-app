@@ -5,7 +5,6 @@ export default {
 }
 
 function retrieveWeatherDataByCityId(cityId) {
-	return fetch(`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&&id=${cityId}`)
-    	.then(response => response.json())
-    	.then(rjson => console.log(rjson))
+	return fetch(`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&&&units=metric&&id=${cityId}`)
+    	.then(response => response.json());
 }

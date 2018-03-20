@@ -3,7 +3,12 @@ import React, {Component} from 'react';
 
 class WeatherCard extends Component {
 	render() {
-		return <div>this is the weather card of city {this.props.cityName}</div>
+		return (
+			<div>
+				{this.props.city.name}
+				{JSON.stringify(this.props.city.data)}
+			</div>
+		);
 	}
 }
 

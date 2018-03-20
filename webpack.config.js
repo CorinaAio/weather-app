@@ -43,6 +43,7 @@ module.exports = {
 	        API_KEY: JSON.stringify(process.env.API_KEY)
       })
 	],
+	devtool: 'cheap-module-eval-source-map',
 	node: {
 	    console: true,
 	    fs: 'empty',
